@@ -18,9 +18,9 @@ namespace Calculadora
             Calculadora calculadora = new Calculadora();
 
             
-            while (filaOperacoes.Count >= 0)
+            while (filaOperacoes.Count > 0) // Condição ajustada para garantir que o loop finalize quando a fila estiver vazia.
             {
-                Operacoes operacao = filaOperacoes.Peek();
+                Operacoes operacao = filaOperacoes.Dequeue(); // Metódo corrigido para que os elementos seja retirados da fila após processamento.
                 calculadora.calcular(operacao);
                 Console.WriteLine("{0} {1} {2} = {3}", operacao.valorA,operacao.operador,operacao.valorB, operacao.resultado);
             }
