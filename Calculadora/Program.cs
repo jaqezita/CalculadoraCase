@@ -31,13 +31,9 @@ namespace Calculadora
                     Console.WriteLine("{0} {1} {2} = {3}\n", operacao.valorA, operacao.operador, operacao.valorB, operacao.resultado);
                     //Imprimir a lista de operações a ser processada após do cálculo
                     if (filaOperacoes.Count > 0)
-                    {
                         ImprimirFilaOperacoes(filaOperacoes);
-                    }
                     else
-                    {
                         Console.WriteLine("Nenhuma operação restante na fila.\n");
-                    }
                 }
                 catch (DivideByZeroException ex)
                 {
@@ -56,8 +52,7 @@ namespace Calculadora
             {
                 Console.WriteLine("{0} {1} {2}", operacao.valorA, operacao.operador, operacao.valorB);
             }
-            Console.WriteLine();
-            Console.WriteLine("--------------------------------\n");
+            Console.WriteLine("\n--------------------------------\n");
         }       
     }
 }
