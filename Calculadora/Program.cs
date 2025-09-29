@@ -65,13 +65,11 @@ namespace Calculadora
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Histórico de resultados:");
             Console.ResetColor();
-
-            int count = historico.Count;
-            while(historico.Count > 0)
+            
+            while (historico.Count > 0)
             {
                 decimal resultado = historico.Pop();
-                Console.WriteLine("Operação {0}: {1}", count, resultado);
-                count--;
+                Console.WriteLine("{0}", resultado);
             }
         }       
     }
