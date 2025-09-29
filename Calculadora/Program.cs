@@ -67,8 +67,9 @@ namespace Calculadora
             Console.ResetColor();
 
             int count = historico.Count;
-            foreach (var resultado in historico)
+            while(historico.Count > 0)
             {
+                decimal resultado = historico.Pop();
                 Console.WriteLine("Operação {0}: {1}", count, resultado);
                 count--;
             }
