@@ -32,9 +32,10 @@ namespace Calculadora
         {
             if (operacao.valorB == 0)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 throw new DivideByZeroException("Divisão por zero não é permitida.");
             }
-            return operacao.valorA / operacao.valorB;
+            return (decimal)operacao.valorA / operacao.valorB;
         }
        
     }
