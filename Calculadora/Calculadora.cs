@@ -16,15 +16,15 @@ namespace Calculadora
             }
             return operacao;
         }
-        public int soma(Operacoes operacao)
+        public decimal soma(Operacoes operacao)
         {
             return operacao.valorA + operacao.valorB;
         }
-        public int subtracao(Operacoes operacao)
+        public decimal subtracao(Operacoes operacao)
         {
             return operacao.valorA - operacao.valorB;
         }
-        public int multiplicacao(Operacoes operacao)
+        public decimal multiplicacao(Operacoes operacao)
         {
             return operacao.valorA * operacao.valorB;
         }
