@@ -36,13 +36,51 @@ O projeto pode ser executado em qualquer IDE que suporte .NET (como VS Code com 
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU_USUARIO/CalculadoraCase.git](https://github.com/SEU_USUARIO/CalculadoraCase.git)
+    git clone https://github.com/jaqezita/CalculadoraCase.git
     ```
 2.  **Navegue até o diretório:**
     ```bash
     cd CalculadoraCase
+    cd Calculadora
     ```
 3.  **Execute:**
     ```bash
     dotnet run
     ```
+
+---
+
+## Saída Esperada no Console
+
+A saída demonstra a resolução do *overflow* e o fluxo de dados **FIFO** (processamento da fila) seguido pela inversão **LIFO** (impressão da pilha).
+
+```bash
+Operação processada:
+2 + 3 = 5
+
+Próximas operações na fila: 4
+14 - 8
+5 * 6
+2147483647 + 2
+18 / 3
+
+...
+
+Operação processada:
+2147483647 + 2 = 2147483649 <-- Valor corrigido após alteração para o tipo decimal
+
+...
+
+Operação processada:
+18 / 3 = 6
+
+Nenhuma operação restante na fila.
+
+===================================
+
+Histórico de resultados:
+6                    <-- Último a ser calculado, primeiro a sair (LIFO)
+2147483649           
+30
+6
+5                    <-- Primeiro a ser calculado, último a sair
