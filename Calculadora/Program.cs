@@ -17,7 +17,8 @@ namespace Calculadora
 
             Calculadora calculadora = new Calculadora();
 
-            
+            Stack<decimal> historicoResultados = new Stack<decimal>();
+
             while (filaOperacoes.Count > 0) // Condição ajustada para garantir que o loop finalize quando a fila estiver vazia.
             {
                 // Implementar tratamento de exceção para divisão por zero
@@ -29,6 +30,8 @@ namespace Calculadora
                     Console.WriteLine("Operação processada:");
                     Console.ResetColor();
                     Console.WriteLine("{0} {1} {2} = {3}\n", operacao.valorA, operacao.operador, operacao.valorB, operacao.resultado);
+                    //Guardar o resultado da operação no histórico
+                    historicoResultados.Push(operacao.resultado);
                     //Imprimir a lista de operações a ser processada após do cálculo
                     if (filaOperacoes.Count > 0)
                         ImprimirFilaOperacoes(filaOperacoes);
@@ -40,19 +43,35 @@ namespace Calculadora
                     Console.WriteLine(ex.Message);
                     continue;
                 }
-
             }
+            //Imprimir o histórico de resultados
+            ImprimirHistoricoResultados(historicoResultados);
         }
         private static void ImprimirFilaOperacoes(Queue<Operacoes> fila)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Próximas operações na fila: {0}", fila.Count);
-            Console.ResetColor(); 
+            Console.ResetColor();
+
             foreach (var operacao in fila)
             {
                 Console.WriteLine("{0} {1} {2}", operacao.valorA, operacao.operador, operacao.valorB);
             }
             Console.WriteLine("\n--------------------------------\n");
+        }
+        private static void ImprimirHistoricoResultados(Stack<decimal> historico)
+        {
+            Console.WriteLine("===================================\n");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Histórico de resultados:");
+            Console.ResetColor();
+
+            int count = historico.Count;
+            foreach (var resultado in historico)
+            {
+                Console.WriteLine("Operação {0}: {1}", count, resultado);
+                count--;
+            }
         }       
     }
 }
