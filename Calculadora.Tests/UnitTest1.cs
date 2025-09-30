@@ -76,6 +76,32 @@ public class CalculadoraCoreTests
         Assert.Equal(0M, op.resultado);
     }
 
+    [Fact]
+    public void Teste_Multiplicacao_NegativoEPositivo()
+    {
+        Operacoes op = new Operacoes { valorA = -4M, valorB = 5M, operador = '*' };
+        _calc.calcular(op);
+
+        Assert.Equal(-20M, op.resultado);
+    }
+
+    [Fact]
+    public void Teste_Multiplicacao_DoisNegativos()
+    {
+        Operacoes op = new Operacoes { valorA = -3M, valorB = -7M, operador = '*' };
+        _calc.calcular(op);
+
+        Assert.Equal(21M, op.resultado);
+    }
+
+    [Fact]
+    public void Teste_Multiplicacao_Overflow_DeveLancarExcecao()
+    {
+        Operacoes op = new Operacoes { valorA = decimal.MaxValue, valorB = 2M, operador = '*' };
+
+        Assert.Throws<OverflowException>(() => _calc.calcular(op));
+    }
+
     // 5. Testes de Divisão (Incluindo Casos de Borda do Item 2)
     [Fact]
     public void Teste_Divisao_SemResto()
