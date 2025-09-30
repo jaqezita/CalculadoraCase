@@ -84,3 +84,21 @@ Histórico de resultados:
 30
 6
 5                    <-- Primeiro a ser calculado, último a sair
+```
+
+
+---
+### Testes Unitários
+
+A solução contém um projeto dedicado (`Calculadora.Tests`) com testes **xUnit**.
+
+1.  **Navegue até o diretório:**
+    ```bash
+    cd Calculadora.Tests
+    ```
+
+2.  **Execute os Testes:**
+    ```bash
+    dotnet test
+    ```
+    A saída deve indicar que **se os testes foram aprovados ou reprovados**.
