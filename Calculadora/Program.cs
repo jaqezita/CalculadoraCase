@@ -48,11 +48,6 @@ namespace Calculadora
                     Console.WriteLine(ex.Message);
                     continue;
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Ocorreu um erro inesperado: " + ex.Message);
-                    continue;
-                }
             }
             //Imprimir o histórico de resultados
             ImprimirHistoricoResultados(historicoResultados);

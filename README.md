@@ -1,6 +1,6 @@
 ## CalculadoraCase - Resolução do Desafio Técnico
 
-Este repositório contém a solução completa para o *Case* de Desenvolvimento Júnior, focado na correção e implementação de funcionalidades em uma aplicação de calculadora C#, utilizando as estruturas de dados **Queue (Fila)** e **Stack (Pilha)**.
+Este repositório contém a solução completa o *Case* de Desenvolvimento Júnior, focado na correção e implementação de funcionalidades em uma aplicação de calculadora C#, utilizando as estruturas de dados **Queue (Fila)** e **Stack (Pilha)**.
 
 ---
 
@@ -22,7 +22,8 @@ Este repositório contém a solução completa para o *Case* de Desenvolvimento 
 ### Tratamento de Exceções
 A responsabilidade foi dividida:
 1.  O método `divisao` **lança** a exceção (`throw`).
-2.  O método `Main` **capta** a exceção (`try-catch`), isolando a falha e permitindo que o processamento do restante da Fila continue (`continue`).
+2.  O método `multiplicacao` **lança** a exceção (`throw`).
+3.  O método `Main` **capta** a exceção (`try-catch`), isolando a falha e permitindo que o processamento do restante da Fila continue (`continue`).
 
 ### Estruturas de Dados
 * **Queue (`filaOperacoes`):** Usada para a **entrada** das operações, garantindo o fluxo **FIFO** (First-In, First-Out).
