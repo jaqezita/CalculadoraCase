@@ -1,6 +1,6 @@
 ## CalculadoraCase - Resolução do Desafio Técnico
 
-Este repositório contém a solução completa o *Case* de Desenvolvimento Júnior, focado na correção e implementação de funcionalidades em uma aplicação de calculadora C#, utilizando as estruturas de dados **Queue (Fila)** e **Stack (Pilha)**.
+Este repositório contém a solução para o *Case* de Desenvolvimento Júnior, focado na correção e implementação de funcionalidades em uma aplicação de calculadora C#, utilizando as estruturas de dados **Queue (Fila)** e **Stack (Pilha)**.
 
 ---
 
