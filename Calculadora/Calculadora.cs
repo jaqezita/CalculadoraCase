@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 namespace Calculadora
 {
     public class Calculadora
@@ -26,6 +27,11 @@ namespace Calculadora
         }
         public decimal multiplicacao(Operacoes operacao)
         {
+            if (operacao.valorA * operacao.valorB > decimal.MaxValue) 
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                throw new OverflowException("O resultado da multiplicação excede o valor máximo permitido.");
+            }
             return operacao.valorA * operacao.valorB;
         }
         public decimal divisao(Operacoes operacao)
